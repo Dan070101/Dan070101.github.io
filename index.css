@@ -22,6 +22,9 @@ body {
     top: 0;
     left: 0;
     background-image: url('./images/intro.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom bottom;
     z-index: 10;
     animation: fade-out 3s ease-in forwards;
 }

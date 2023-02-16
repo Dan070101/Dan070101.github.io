@@ -18,6 +18,7 @@ const bounds = document.querySelector('.gamearea').getBoundingClientRect();
 
 const startScreen = document.getElementById('start');
 const gameOverScreen = document.getElementById('game-over');
+const finalScore = document.getElementById('final-score');
 
 const sprites = document.querySelector('.sprites');
 const car = document.querySelector('.car');
@@ -218,6 +219,7 @@ function onGameOver() {
     gameOver = true;
     started = false;
 
+    finalScore.innerHTML = `${currentPoints}`.padStart(6, '0');
     gameOverScreen.hidden = false;
 
     road.classList.remove('animated');
