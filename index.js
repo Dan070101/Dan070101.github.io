@@ -116,7 +116,7 @@ function addBolt() {
 
         bolt.className = 'bolt';
 
-        bolt.y = 30;
+        bolt.y = -30;
         bolt.x = Math.floor(Math.random() * (bounds.width - 30));
 
         bolt.style.top = `${bolt.y}px`;
@@ -140,7 +140,7 @@ function addObsticle() {
 
         obsticle.className = `obsticle ${type}`;
 
-        obsticle.y = 30;
+        obsticle.y = -70;
         obsticle.x = Math.floor(Math.random() * (bounds.width - 30));
 
         obsticle.style.top = `${obsticle.y}px`;
