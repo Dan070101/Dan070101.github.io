@@ -1,0 +1,313 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: ArcadeClassics;
+    src: url(RetroGaming.ttf);
+}
+
+html,
+body {
+    height: 100vh;
+    width: 100vw;
+}
+
+.intro-img {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-image: url('./images/intro.jpg');
+    z-index: 10;
+    animation: fade-out 3s ease-in forwards;
+}
+
+.gamearea-wrapper {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+    /* background-color: black; */
+    background-image: url('./images/background.jpg');
+}
+
+.gamearea {
+    width: 450px;
+    height: 80vh;
+    border: 1px solid black;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+.road {
+    width: 100%;
+    height: 100vh;
+    background-color: #5f5f5f;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-20vh);
+}
+
+.road.animated {
+    animation: stripemove 0.8s linear infinite;
+}
+
+.stats-container {
+    font-family: ArcadeClassics;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 15px;
+    font-size: 2rem;
+    line-height: 1;
+}
+
+.screen-effect {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.screen-effect::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    z-index: 2;
+    background-size: 100% 2px, 3px 100%;
+    pointer-events: none;
+}
+
+.screen-effect::after {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(18, 16, 16, 0.1);
+    opacity: 0;
+    z-index: 2;
+    pointer-events: none;
+    animation: flicker 0.15s infinite;
+}
+
+.battery-container {
+    display: flex;
+    align-items: flex-end;
+}
+
+.battery {
+    height: 35px;
+    width: 28px;
+    border: 4px solid white;
+    margin-right: 10px;
+    position: relative;
+}
+
+.battery::before {
+    content: ' ';
+    display: block;
+    position: absolute;
+    height: 5px;
+    width: 10px;
+    top: -9px;
+    left: 5px;
+    background-color: white;
+}
+
+.batter-fill {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    right: 0;
+    background-color: white;
+}
+
+.stripes {
+    height: 100%;
+    width: 20px;
+    opacity: 0.8;
+    background: repeating-linear-gradient(to top,
+            white,
+            white 8vh,
+            transparent 8vh,
+            transparent 20vh);
+}
+
+.car {
+    position: absolute;
+    width: 80px;
+    height: 160px;
+}
+
+.car img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.bolt {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-image: url('./images/bolt.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.obsticle {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.obsticle.oil {
+    background-image: url('./images/oil.png');
+}
+
+.obsticle.barrel {
+    background-image: url('./images/barrel.png');
+}
+
+.info-screen {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40;
+    font-family: ArcadeClassics;
+    color: #fff;
+    flex-direction: column;
+    font-size: 1.5rem;
+}
+
+@keyframes stripemove {
+    to {
+        transform: translateX(0vh);
+    }
+}
+
+@keyframes fade-out {
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes flicker {
+    0% {
+        opacity: 0.3628;
+    }
+
+    5% {
+        opacity: 0.95281;
+    }
+
+    10% {
+        opacity: 0.75838;
+    }
+
+    15% {
+        opacity: 0.75041;
+    }
+
+    20% {
+        opacity: 0.15705;
+    }
+
+    25% {
+        opacity: 0.8539;
+    }
+
+    30% {
+        opacity: 0.31155;
+    }
+
+    35% {
+        opacity: 0.401;
+    }
+
+    40% {
+        opacity: 0.91443;
+    }
+
+    45% {
+        opacity: 0.94071;
+    }
+
+    50% {
+        opacity: 0.85429;
+    }
+
+    55% {
+        opacity: 0.59574;
+    }
+
+    60% {
+        opacity: 0.25344;
+    }
+
+    65% {
+        opacity: 0.56685;
+    }
+
+    70% {
+        opacity: 0.20575;
+    }
+
+    75% {
+        opacity: 0.88105;
+    }
+
+    80% {
+        opacity: 0.2325;
+    }
+
+    85% {
+        opacity: 0.71138;
+    }
+
+    90% {
+        opacity: 0.80479;
+    }
+
+    95% {
+        opacity: 0.75741;
+    }
+
+    100% {
+        opacity: 0.65328;
+    }
+}

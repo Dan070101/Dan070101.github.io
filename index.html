@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <audio autoplay loop>
+        <source src="audio.mp3" type="audio/mpeg">
+    </audio>
+    <div class="gamearea-wrapper">
+        <div class="gamearea">
+            <div class="road">
+                <div class="stripes"></div>
+            </div>
+            <div class="sprites">
+                <div class="car" style="top: 550px; left: 185px;">
+                    <img src="./images/car.png" />
+                </div>
+            </div>
+            <div class="stats-container">
+                <p class="points">000000</p>
+                <div class="battery-container">
+                    <div class="battery">
+                        <div class="batter-fill" style="height: 100%"></div>
+                    </div>
+                    <p class="batter-text">100%</p>
+                </div>
+            </div>
+            <div id="start">
+                <div class="info-screen">
+                    <p>Bonnet Bolt</p>
+                    <p>Press SPACE to play</p>
+                </div>
+            </div>
+            <div id="game-over" hidden>
+                <div class="info-screen">
+                    <p>GAME OVER</p>
+                    <p>Press SPACE to try again</p>
+                </div>
+            </div>
+            <div class="screen-effect"></div>
+        </div>
+    </div>
+    <img class="intro-img" src="images/intro.jpg" />
+    <script src="./index.js"></script>
+</body>
+
+</html>
