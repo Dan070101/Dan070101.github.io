@@ -216,6 +216,8 @@ function onStart() {
 }
 
 function onGameOver() {
+    clearInterval(gameInterval);
+
     gameOver = true;
     started = false;
 
@@ -229,8 +231,6 @@ function start() {
     onStart();
 
     gameInterval = setInterval(() => {
-        if (gameOver) return clearInterval(gameInterval);
-
         addBolt();
         addObsticle();
         reduceBattery();
